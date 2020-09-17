@@ -1,0 +1,10 @@
+.popup-view__img {
+  max-width: 75vw;
+  max-height: 75vh;
+}
+
+@media (max-width: 320px) {
+  .popup-view__img {
+    max-height: 299px;
+  }
+}

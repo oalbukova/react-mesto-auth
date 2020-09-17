@@ -1,0 +1,11 @@
+.popup__title_registration {
+  color: white;
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .popup__title_registration {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}

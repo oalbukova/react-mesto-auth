@@ -1,0 +1,21 @@
+.like__button {
+  background-image: url(../../../images/like.svg);
+  background-size: cover;
+  width: 21px;
+  height: 18px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  -webkit-transition: opacity linear 0.5s;
+  transition: opacity linear 0.5s;
+}
+
+.like__button:hover {
+  opacity: .6;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+  -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+}

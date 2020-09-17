@@ -1,0 +1,13 @@
+.popup-view__caption {
+  font-family: 'Inter', Arial, sans-serif;
+  color: white;
+  font-size: 12px;
+  font-weight: 400;
+  margin-top: 17px;
+}
+
+@media (max-width: 450px) {
+  .popup-view__caption {
+    margin-top: 10px;
+  }
+}

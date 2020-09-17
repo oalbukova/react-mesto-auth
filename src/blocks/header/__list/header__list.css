@@ -1,0 +1,18 @@
+.header__list {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  list-style-type: none;
+  display: flex;
+  padding-top: 10px;
+}
+
+@media (max-width: 700px) {
+  .header__list {
+    font-size: 14px;
+    line-height: 17px;
+    padding-top: 0;
+    padding-right: 9px;
+  }
+}

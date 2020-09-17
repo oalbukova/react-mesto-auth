@@ -1,0 +1,17 @@
+.popup__input_registration {
+  background-color: black;
+  color: white;
+  border-bottom: 2px solid #CCCCCC;
+}
+
+.popup__input_registration:valid {
+  border-bottom: 1px solid green;
+}
+
+@media (max-width: 700px) {
+  .popup__input_registration {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 11px;
+  }
+}

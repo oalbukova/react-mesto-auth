@@ -1,0 +1,7 @@
+@media (max-width: 375px) {
+  .popup__container_type_login {
+    padding-bottom: 50px;
+    max-width: 100%;
+    width: 279px;
+  }
+}

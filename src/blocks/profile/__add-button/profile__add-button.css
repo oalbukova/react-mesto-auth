@@ -1,0 +1,30 @@
+.profile__add-button {
+  background-image: url(../../../images/plus.svg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  cursor: pointer;
+  max-width: 150px;
+  width: 100vh;
+  height: 50px;
+  outline: none;
+  border-radius: 2px;
+  border: none;
+  -webkit-transition: opacity linear 0.5s;
+  transition: opacity linear 0.5s;
+  margin-top: 37px;
+}
+
+.profile__add-button:hover {
+  opacity: .6;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+}
+
+@media (max-width: 831px) {
+  .profile__add-button {
+    background-image: url(../../../images/add2.svg);
+    margin-top: 32px;
+    max-width: 282px;
+  }
+}

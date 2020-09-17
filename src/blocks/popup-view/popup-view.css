@@ -1,0 +1,9 @@
+@import url(./__item/popup-view__item.css);
+@import url(./__img/popup-view__img.css);
+@import url(./__caption/popup-view__caption.css);
+
+.popup-view {
+  font-family: 'Inter', Arial, sans-serif;
+  margin: auto;
+  position: relative;
+}

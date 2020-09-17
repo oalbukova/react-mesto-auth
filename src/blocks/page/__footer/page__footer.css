@@ -1,0 +1,9 @@
+.page__footer {
+  margin: 69px auto 0;
+}
+
+@media (max-width: 700px) {
+  .page__footer {
+    margin: 49px auto 0;
+  }
+}

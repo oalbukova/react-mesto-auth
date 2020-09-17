@@ -1,0 +1,11 @@
+@import url(./__img/card__img.css);
+@import url(./__delete/card__delete.css);
+@import url(./__delete/_hidden/card__delete_hidden.css);
+@import url(./__caption/card__caption.css);
+@import url(./__text/card__text.css);
+
+.card {
+  font-family: 'Inter', Arial, sans-serif;
+  position: relative;
+  list-style: none;
+}

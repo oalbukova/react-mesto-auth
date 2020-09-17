@@ -1,0 +1,11 @@
+@import url(./__button/like__button.css);
+@import url(./__button/_type/like__button_type_active.css);
+@import url(./__sum/like__sum.css);
+@import url(./__sum/_type/like__sum_type_zero.css);
+
+.like {
+  font-family: 'Inter', Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

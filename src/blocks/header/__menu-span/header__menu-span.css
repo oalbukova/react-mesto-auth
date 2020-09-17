@@ -1,0 +1,37 @@
+.header__menu-span {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 3.84px;
+  background-color: white;
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s;
+}
+
+.header__menu-span:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -7.68px;
+  width: 100%;
+  height: 3.84px;
+  background-color: white;
+}
+
+.header__menu-span:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 7.68px;
+  width: 100%;
+  height: 3.84px;
+  background-color: white;
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s;
+}
+
+

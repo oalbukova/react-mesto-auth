@@ -1,0 +1,34 @@
+.popup__button-registration {
+  font-family: "Inter",
+    Arial,
+    sans-serif;
+  background-color: white;
+  color: black;
+  height: 50px;
+  border-radius: 2px;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 400;
+  margin-top: 198px;
+  margin-bottom: 14px;
+  margin-left: 36px;
+  margin-right: 36px;
+  -webkit-transition: opacity linear 0.5s;
+  transition: opacity linear 0.5s;
+}
+
+.popup__button-registration:hover {
+  cursor: pointer;
+  opacity: 0.85;
+}
+
+@media (max-width: 700px) {
+  .popup__button-registration {
+    margin-top: 158px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 18px;
+    font-size: 16px;
+    line-height: 19px;
+  }
+}

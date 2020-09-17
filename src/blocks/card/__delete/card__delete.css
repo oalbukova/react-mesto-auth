@@ -1,0 +1,24 @@
+.card__delete {
+  background-image: url(../../../images/delete.svg);
+  background-size: cover;
+  width: 18px;
+  height: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  position: absolute;
+  right: 5%;
+  top: 5%;
+  -webkit-transition: opacity linear 0.5s;
+  transition: opacity linear 0.5s;
+}
+
+.card__delete:hover {
+  opacity: .6;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
