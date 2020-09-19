@@ -3,6 +3,8 @@
   display: -ms-flexbox;
   display: flex;
   width: 100%;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
   align-items: baseline;
 }
 
@@ -19,6 +21,9 @@
 
 @media (max-width: 375px) {
   .profile__container {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    -ms-grid-row-align: flex-start;
     align-items: flex-start;
     margin-top: 20px;
   }

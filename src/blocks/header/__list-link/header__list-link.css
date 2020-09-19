@@ -14,7 +14,6 @@
 
 @media (max-width: 700px) {
   .header__list-link {
-    font-size: 14px;
     line-height: 17px;
     padding-top: 0;
     padding-right: 9px;

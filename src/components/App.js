@@ -171,7 +171,7 @@ function App() {
     handleDeleteClick();
   }
 
-  function handleConfirmDelete(card) {
+  function handleConfirmDelete() {
     setIsLoading(true);
     api
       .deleteCard(cardDelete._id)

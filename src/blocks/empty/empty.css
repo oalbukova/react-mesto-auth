@@ -1,12 +1,5 @@
 .empty {
-    display: block;
- /* display: none;*/
+  display: block;
   height: 142px;
   background-color: black;
 }
-/*
-@media (max-width: 700px) {
-  .empty {
-  display: block;
-  }
-}*/

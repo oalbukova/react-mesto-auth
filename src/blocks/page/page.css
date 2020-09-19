@@ -12,12 +12,15 @@
   max-width: 1280px;
   min-width: 300px;
   margin: 0 auto;
+  display: -ms-grid;
   display: grid;
   grid-template-areas:
     "header"
     "main"
     "footer";
+  -ms-grid-rows: auto 1fr auto;
   grid-template-rows: auto 1fr auto;
+  -ms-grid-columns: auto;
   grid-template-columns: auto;
   min-height: 100vh;
 }

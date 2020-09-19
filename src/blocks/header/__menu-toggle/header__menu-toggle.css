@@ -22,13 +22,10 @@
 }
 
 .header__menu-toggle:checked~.header__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
-/*
-.header__menu-toggle:checked~.empty {
-  display: flex;
-}*/
-
 
 @media screen and (min-width: 700px) {
   .header__menu-toggle {

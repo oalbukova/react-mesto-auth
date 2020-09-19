@@ -2,3 +2,9 @@
   font-weight: 500;
   color: white;
 }
+
+@media (max-width: 700px) {
+  .header__list-item {
+  margin-bottom: 20px;
+  }
+}

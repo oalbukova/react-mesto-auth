@@ -6,15 +6,18 @@
   top: 0px;
   left: 0px;
   opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   background-image: url(../../../images/penavatar.svg);
   background-position: center;
   background-repeat: no-repeat;
+  -webkit-transition: opacity linear 0.5s;
   transition: opacity linear 0.5s;
 }
 
 .profile__img-hover:hover {
   cursor: pointer;
   opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
 
 @media screen and (max-width: 831px) {
