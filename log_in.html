@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="author" content="Ольга Альбукова" />
+  <meta name="description" content="портфолио Ольги Альбуковой на Яндекс Практикум" />
+  <link rel="stylesheet" href="pages/index.css" />
+  <title lang="en">Mesto Russia</title>
+</head>
+
+<body class="body">
+  <div class="page">
+
+    <!-- header-->
+    <header class="header page__header">
+      <a class="logo" title="Вы на главной странице">
+        <img class="logo__img" src="./images/logo.svg" alt="Mesto Russia" lang="en" />
+      </a>
+      <nav>
+        <ul class="header__list">
+          <li class="header__list-item"><a href="./sign_up.html" class="header__list-link">Регистрация</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!--main-->
+    <main class="main">
+
+      <!--registration-->
+      <section class="registration" id="registration">
+        <form class="popup__container popup__container_registration" name="formRegistration" method="get" action="#"
+          id="formRegistration">
+          <h2 class="popup__title popup__title_registration">Вход</h2>
+          <input class="popup__input popup__input_registration" id=email-input' type="email" required
+            placeholder="Email" name="emailInput" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" minlength="4"
+            maxlength="40" />
+          <span class='popup__span-error' id='name-input-error'></span>
+          <input class="popup__input popup__input_registration" id='password' type="password" required
+            placeholder="Пароль" name="passwordInput" minlength="10" maxlength="10" />
+          <span class='popup__span-error' id='password-input-error'></span>
+          <button class="popup__button-registration" id="registration-save" type="submit">
+            Войти
+          </button>
+          <a class="popup__span-registration" href="./sign_up.html" id="registration-span">Ещё не зарегистрированы?
+            Регистрация</a>
+        </form>
+      </section>
+
+      <!--popup-error-->
+      <section class="popup popup_opened" id="popupError">
+        <form class="popup__container popup__container_type_login" name="Error" method="get" action="#"
+          id="formError">
+          <button class="button-close button-close_login" id="formError-close" type="reset" aria-label="Закрыть"></button>
+          <div class="popup__img popup__img_type_error"></div>
+          <h2 class="popup__title popup__title_type_login">Что-то пошло не так! Попробуйте ещё раз.</h2>
+        </form>
+      </section>
+
+    </main>
+
+</body>
+
+</html>
