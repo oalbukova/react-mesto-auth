@@ -15,3 +15,5 @@
 @import url(blocks/footer/footer.css);
 @import url(blocks/popup/_opened/popup_opened.css);
 @import url(blocks/popup/_opacity/popup_opacity.css);
+@import url(blocks/empty/empty.css);
+@import url(blocks/empty/_type/empty_type_inactive.css);

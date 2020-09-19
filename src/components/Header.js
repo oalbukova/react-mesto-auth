@@ -4,76 +4,26 @@ import headerLogo from "../images/logo.svg";
 import NavBar from "./NavBar";
 
 function Header(props) {
-  const {
-    loggedIn,
-    onSignOut,
-    userData,
-    //   loggedInEmail,
-    //email,
-    loginState,
-    //  handleLoginState,
-    //  setEmail,
-    //   setLoggedInEmail,
-  } = props; /*
-            >/*
-              {loginState ? "Регистрация" : "Войти"}
-            </Link>
-          )}
-        </ul>
-      </nav>
-    </header>
-  );*/
-  /*
-  return (
-    <header className="header page__header">
-      <img className="logo" src={headerLogo} alt="logo" lang="en" />
-      <nav className="header__nav">
-        <ul className="header__list header__list_main">
-          {loggedIn ? (
-            <>
-              <li className="header__list-item header__list-item_main">
-                {email}
-              </li>
-              <Link
-                className="header__list-link"
-                to="signin"
-                onClick={onSignOut}
-              >
-                Выйти
-              </Link>
-            </>
-          ) : (
-            <Link
-              className="header__list-link"
-              to={loginState ? "/sign-up" : "/sign-in"}
-            >
-              {loginState ? "Войти" : "Регистрация"}
-            </Link>
-            /*return (
-                <header className="header page__header">
-                  <img className="logo" src={headerLogo} alt="logo" lang="en" />
-                  {loggedIn ? (
-                    <NavBar signOut={signOut} email={userData ? userData.email : ""} />
-                  ) : (
-                    <Link
-                      to={loginState ? "/sign-in" : "/sign-up"}
-                      className="header__list-link"
-                    >
-                      {loginState ? "Войти" : "Регистрация"}
-                    </Link>
-                          )}
-          )}/*
-        </ul>
-      </nav>
-    </header>
-  );
-}*/
-
+  const { loggedIn, onSignOut, userData, loginState, emptyClick } = props;
   return (
     <header className="header page__header">
       <img className="logo" src={headerLogo} alt="logo" lang="en" />
       {loggedIn ? (
-        <NavBar signOut={onSignOut} email={userData ? userData.email : ""} />
+        <>
+          <input
+            type="checkbox"
+            className="header__menu-toggle"
+            id="header__menu-toggle"
+          />
+          <label
+            htmlFor="header__menu-toggle"
+            className="header__menu-button"
+            onClick={emptyClick}
+          >
+            <span className="header__menu-span" onClick={emptyClick} />
+          </label>
+          <NavBar signOut={onSignOut} email={userData ? userData.email : ""} />
+        </>
       ) : (
         <Link
           to={loginState ? "/sign-in" : "/sign-up"}
@@ -85,6 +35,5 @@ function Header(props) {
     </header>
   );
 }
-
 
 export default Header;

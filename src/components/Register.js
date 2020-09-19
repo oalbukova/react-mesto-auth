@@ -12,16 +12,7 @@ function Register(props) {
   }, []);
 
   const handleSubmit = (e) => {
-    e.preventDefault(); /*
-    auth.register(email, password).then((res) => {
-      if (res) {
-        successToolTip();
-        setTimeout(openToolTip, 1000);
-        history.push("/sign-in");
-      } else {
-        openToolTip();
-      }
-    });*/
+    e.preventDefault(); 
     onRegister({ email, password })
       .then(() => {
         successToolTip();

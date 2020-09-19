@@ -38,16 +38,18 @@ function App() {
   };
   const [currentUser, setCurrentUser] = React.useState({});
   const [isLoading, setIsLoading] = React.useState();
-
   const [loggedIn, setLoggedIn] = React.useState(false);
-  // const [loggedInEmail, setLoggedInEmail] = React.useState("");
-  //const [email, setEmail] = React.useState("");
   const [loginState, setLoginState] = React.useState(false);
   const [userData, setUserData] = React.useState({});
   const [isTooltipOpen, setIsTooltipOpen] = React.useState(false);
   const [successToolTip, setSuccessToolTip] = React.useState(false);
-  // const [loginActive, setLoginActive] = React.useState(true);
+  const [isEmpty, setIsEmpty] = React.useState(false);
   const history = useHistory();
+  const emptyClassName = `${isEmpty ? "empty" : "empty_type_inactive"}`;
+
+  function handleChangeEmpty() {
+    setIsEmpty(!isEmpty);
+  }
 
   function handleLoginState(state) {
     setLoginState(state);
@@ -66,11 +68,8 @@ function App() {
     return auth.register(email, password).then((res) => {
       setIsLoading(false);
       if (res) {
-       // successToolTip();
-        //setTimeout(handleTooltipOpen, 1000);
         return true;
       } else {
-      //  handleTooltipOpen();
         throw new Error("Некорректно заполнено одно из полей");
       }
     });
@@ -101,21 +100,6 @@ function App() {
     setLoggedIn(false);
     history.push("/sign-in");
   }
-  /*
-  function tokenCheck() {
-    const jwt = localStorage.getItem("jwt");
-    if (jwt) {
-      auth.getContent(jwt).then((res) => {
-        if (res.data) {
-          handleLogin();
-          setEmail(res.data.email);
-          history.push("/");
-        } else {
-          localStorage.removeItem("token");
-        }
-      });
-    }
-  }*/
 
   function tokenCheck() {
     const jwt = localStorage.getItem("jwt");
@@ -127,10 +111,9 @@ function App() {
             email: res.data.email,
           });
           setLoggedIn(true);
-          //   handleLogin();
           history.push("/");
         } else {
-          localStorage.removeItem("token");
+          localStorage.removeItem("jwt");
         }
       });
     }
@@ -282,18 +265,14 @@ function App() {
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
+      <div className={emptyClassName} />
       <div className="page">
         <Header
           loggedIn={loggedIn}
           onSignOut={signOut}
           userData={userData}
           loginState={loginState}
-          // handleLoginState={handleLoginState}
-          //   loggedInEmail={loggedInEmail}
-          //      setLoggedInEmail={setLoggedInEmail}
-          //  setEmail={setEmail}
-          //  loginActive={loginActive}
-          //   handleRedirect={handleRedirect}
+          emptyClick={handleChangeEmpty}
         />
         <Switch>
           <ProtectedRoute
@@ -312,9 +291,7 @@ function App() {
           <Route path="/sign-in">
             <Login
               name="login"
-              //   openToolTip={handleTooltipOpen}
               successToolTip={handleSuccessToolTip}
-              //  tokenCheck={tokenCheck}
               onLogin={handleLogin}
               onLoginState={handleLoginState}
               isLoading={isLoading}

@@ -18,21 +18,7 @@ function Login(props) {
     }
     onLogin({ email, password }).then(() => {
       history.push("/");
-    }); /*
-    auth
-      .authorize(email, password)
-      .then((data) => {
-        if (data.token) {
-          localStorage.setItem("token", data.token);
-          setEmail("");
-          setPassword("");
-          handleLogin();
-          tokenCheck();
-          history.push("/");
-        } else {
-          openToolTip();
-        }
-      })*/
+    });
   };
 
   return (
