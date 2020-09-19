@@ -33,7 +33,7 @@ Cамостоятельный проект в рамках обучения на
     под Pixel Perfect.
 
 
- #### [Ссылка на готовый проект](https://oalbukova.github.io/react-mesto-auth/)
+ ## [Ссылка на готовый проект](https://oalbukova.github.io/react-mesto-auth/)
 
-#####_Автор: Альбукова Ольга_
+#### _Автор: Альбукова Ольга_
 _e-mail: o.albukova@gmail.com_
