@@ -9,6 +9,7 @@
 @import url(blocks/popup/popup.css);
 @import url(blocks/popup-view/popup-view.css);
 @import url(blocks/button-close/button-close.css);
+@import url(blocks/button-close/_login/button-close_login.css);
 @import url(blocks/card-list/card-list.css);
 @import url(blocks/card/card.css);
 @import url(blocks/like/like.css);
