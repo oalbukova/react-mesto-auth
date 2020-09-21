@@ -1,8 +1,8 @@
 import React from "react";
-import { Link, useHistory } from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 
 function Login(props) {
-  const { onLogin, onLoginState } = props;
+  const {onLogin, onLoginState} = props;
   const emailRef = React.useRef();
   const passwordRef = React.useRef();
   const [email, setEmail] = React.useState("");
@@ -19,12 +19,12 @@ function Login(props) {
     if (!email || !password) {
       return;
     }
-    onLogin({ email, password }).then(() => {
+    onLogin({email, password}).then(() => {
       history.push("/");
     })
-  .catch((err) => {
-      console.log(err);
-    })
+      .catch((err) => {
+        console.log(err);
+      })
   };
 
   function validate() {
@@ -114,8 +114,9 @@ function Login(props) {
         >
           {loginPasswordError}
         </span>
-        <button type="submit" className="popup__button-registration">
-          Войти
+        <button
+          className={(!disabled ? `popup__button-registration` : "popup__button-registration popup__button-registration_type_disabled")}
+          type="submit" disabled={disabled}>Войти
         </button>
         <Link to="/sign-up" className="popup__span-registration">
           Ещё не зарегистрированы? Регистрация
@@ -126,3 +127,4 @@ function Login(props) {
 }
 
 export default Login;
+

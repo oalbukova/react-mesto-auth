@@ -105,8 +105,9 @@ function Register(props) {
         >
           {registerPasswordError}
         </span>
-        <button type="submit" className="popup__button-registration">
-          Зарегистрироваться
+        <button
+          className={(!disabled ? `popup__button-registration` : "popup__button-registration popup__button-registration_type_disabled")}
+          type="submit" disabled={disabled}>Зарегистрироваться
         </button>
         <Link to="/sign-in" className="popup__span-registration">
           Уже зарегистрированы? Войти

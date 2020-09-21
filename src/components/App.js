@@ -94,10 +94,11 @@ function App() {
           setLoggedIn(true);
           tokenCheck();
         } else {
-          handleTooltipOpen();
+          throw new Error('Не удалось войти в аккаунт')
         }
       })
       .catch((err) => {
+        handleTooltipOpen();
         console.log(err);
       })
       .finally(() => {

@@ -17,6 +17,7 @@
 @import url(./__span-error/_email/popup__span-error_email.css);
 @import url(./__button-save/popup__button-save.css);
 @import url(./__button-registration/popup__button-registration.css);
+@import url(./__button-registration/_type/popup__button-registration_type_disabled.css);
 @import url(./__button-save/_type/popup__button-save_type_confirm.css);
 @import url(./__button-save/_type/popup__button-save_type_disabled.css);
 @import url(./__img/popup__img.css);
