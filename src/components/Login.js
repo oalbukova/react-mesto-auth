@@ -21,7 +21,10 @@ function Login(props) {
     }
     onLogin({ email, password }).then(() => {
       history.push("/");
-    });
+    })
+  .catch((err) => {
+      console.log(err);
+    })
   };
 
   function validate() {
@@ -48,7 +51,7 @@ function Login(props) {
 
   React.useEffect(() => {
     onLoginState(false);
-  }, []);
+  }, [onLoginState]);
 
   function handleChangeEmail(e) {
     setEmail(e.target.value);

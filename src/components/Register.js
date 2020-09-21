@@ -1,8 +1,8 @@
 import React from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Register(props) {
-  const { onRegister, successToolTip, openToolTip, onLoginState } = props;
+  const { onRegister, onLoginState } = props;
   const emailRef = React.useRef();
   const passwordRef = React.useRef();
   const [email, setEmail] = React.useState("");
@@ -12,11 +12,10 @@ function Register(props) {
   const [emailValid, setEmailValid] = React.useState(false);
   const [passwordValid, setPasswordValid] = React.useState(false);
   const [disabled, setDisabled] = React.useState(true);
-  const history = useHistory();
 
   React.useEffect(() => {
     onLoginState(true);
-  }, []);
+  }, [onLoginState]);
 
   function validate() {
     setRegisterEmailError(emailRef.current.validationMessage);
@@ -52,15 +51,7 @@ function Register(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onRegister({ email, password })
-      .then(() => {
-        successToolTip();
-        setTimeout(openToolTip, 1000);
-        history.push("/sign-in");
-      })
-      .catch(() => {
-        openToolTip();
-      });
+     onRegister({ email, password })
   };
 
   return (

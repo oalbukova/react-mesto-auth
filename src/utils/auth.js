@@ -6,7 +6,7 @@ export const register = (email, password) => {
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ email, password }),
+    body: JSON.stringify({email, password}),
   })
     .then((res) => {
       if (res.status !== 400) {
@@ -27,10 +27,9 @@ export const authorize = (email, password) => {
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ email, password }),
+    body: JSON.stringify({email, password}),
   })
     .then((res) => {
-      try {
         if (res.status === 200) {
           return res.json();
         }
@@ -40,10 +39,6 @@ export const authorize = (email, password) => {
         if (res.status === 401) {
           throw new Error("Пользователь с email не найден");
         }
-      } catch (e) {
-        console.log(e);
-        return e;
-      }
     })
     .then((data) => {
       if (data.token) {
@@ -64,7 +59,6 @@ export const getContent = (token) => {
     },
   })
     .then((res) => {
-      try {
         if (res.status === 200) {
           return res.json();
         }
@@ -74,13 +68,10 @@ export const getContent = (token) => {
         if (res.status === 401) {
           throw new Error("Переданный токен некорректен");
         }
-      } catch (e) {
-        console.log(e);
-        return e;
-      }
     })
     .then((data) => {
       return data;
     })
     .catch((err) => console.log(err));
 };
+

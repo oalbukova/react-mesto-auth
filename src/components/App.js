@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch, Redirect, useHistory } from "react-router-dom";
+import {Route, Switch, Redirect, useHistory} from "react-router-dom";
 import Header from "./Header.js";
 import Main from "./Main.js";
 import Footer from "./Footer.js";
@@ -12,7 +12,7 @@ import Register from "./Register";
 import Login from "./Login";
 import api from "../utils/Api";
 import * as auth from "../utils/auth.js";
-import { CurrentUserContext } from "../contexts/CurrentUserContext";
+import {CurrentUserContext} from "../contexts/CurrentUserContext";
 import ProtectedRoute from "./ProtectedRoute"; // импортируем HOC
 import InfoTooltip from "./InfoTooltip";
 
@@ -63,19 +63,29 @@ function App() {
     setIsTooltipOpen(true);
   }
 
-  function handleRegister({ email, password }) {
+  function handleRegister({email, password}) {
     setIsLoading(true);
-    return auth.register(email, password).then((res) => {
-      setIsLoading(false);
-      if (res) {
-        return true;
-      } else {
-        throw new Error("Некорректно заполнено одно из полей");
-      }
-    });
+    return auth.register(email, password)
+      .then((res) => {
+        setIsLoading(false);
+        if (res) {
+          handleSuccessToolTip()
+          setTimeout(handleTooltipOpen, 1000);
+          history.push("/sign-in");
+        } else {
+          throw new Error('Не удалось завершить регистрацию')
+        }
+      })
+      .catch((err) => {
+        console.log(`Ошибка регистрации пользователя: ${err}`);
+        handleTooltipOpen();
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
   }
 
-  function handleLogin({ email, password }) {
+  function handleLogin({email, password}) {
     setIsLoading(true);
     return auth
       .authorize(email, password)
@@ -115,12 +125,17 @@ function App() {
         } else {
           localStorage.removeItem("jwt");
         }
-      });
+      })
+        .catch((err) => {
+          console.log(err);
+          history.push('/sign-in');
+        })
     }
   }
 
   React.useEffect(() => {
     tokenCheck();
+    // eslint-disable-next-line
   }, [loggedIn]);
 
   React.useEffect(() => {
@@ -265,7 +280,7 @@ function App() {
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
-      <div className={emptyClassName} />
+      <div className={emptyClassName}/>
       <div className="page">
         <Header
           loggedIn={loggedIn}
@@ -308,10 +323,10 @@ function App() {
             />
           </Route>
           <Route>
-            {loggedIn ? <Redirect to="/" /> : <Redirect to="/sign-in" />}
+            {loggedIn ? <Redirect to="/"/> : <Redirect to="/sign-in"/>}
           </Route>
         </Switch>
-        <Footer />
+        <Footer/>
         <EditProfilePopup
           isOpen={isEditProfilePopupOpen}
           onClose={closeAllPopups}
